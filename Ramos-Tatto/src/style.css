@@ -86,53 +86,103 @@ h3 {
 
 
 header {
-  background: var(--color-background);
   position: sticky;
   top: 0;
-  z-index: 100;
-  border-bottom: 1px solid #1a1a1a;
-  padding: 0 40px;
+  z-index: 1000;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.6)
+  );
+
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s ease;
 }
 
-nav {
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 40px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
-  max-width: var(--max-width);
-  margin: 0 auto;
 }
 
-
-nav h1 {
-  margin: 0;
+/* LOGO */
+.nav-logo h1 {
   color: var(--color-primary);
-  font-size: 24px;
-  letter-spacing: 2px;
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-weight: 900;
+  position: relative;
 }
+
+/*.nav-logo h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 45%;
+  height: 2px;
+  background: var(--color-primary);
+  opacity: 0.7;
+}*/
 
 
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  gap: 36px;
 }
-
 
 .nav-links button {
   background: none;
   border: none;
   color: var(--color-text-dim);
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 5px 0;
+  position: relative;
+  padding: 6px 0;
   transition: color 0.3s ease;
-  font-weight: 500;
+}
+
+.nav-links button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .nav-links button:hover {
   color: var(--color-text-light);
+}
+
+.nav-links button:hover::after {
+  transform: scaleX(1);
+}
+
+/* HEADER SCROLL */
+header.scrolled {
+  background: rgba(5, 5, 5, 0.96);
+}
+
+header.scrolled .nav-container {
+  padding: 16px 40px;
+}
+
+header.scrolled .nav-logo h1 {
+  font-size: 18px;
+  letter-spacing: 3px;
 }
 
 /* ÍCONES SOCIAIS */
@@ -415,4 +465,119 @@ nav h1 {
     flex-direction: column;
     align-items: center;
   }
+}
+footer {
+  width: 100%;
+  padding: 24px 16px;
+  background: linear-gradient(180deg, #0f0f0f, #050505);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 20px 12px;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.6)
+  );
+
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  transition:
+    background 0.4s ease,
+    padding 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+header.scrolled {
+  background: rgba(5, 5, 5, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+header.scrolled .nav-container {
+  padding: 14px 40px;
+}
+
+
+header.scrolled .nav-logo h1 {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+
+.nav-logo h1 {
+  transition: font-size 0.4s ease, letter-spacing 0.4s ease;
+}
+/* ===== LOGO ILUMINADA COM MOUSE ===== */
+
+.logo-glow {
+  position: relative;
+  font-weight: 900;
+  letter-spacing: 4px;
+  cursor: pointer;
+  color: transparent;
+}
+
+/* TEXTO BASE */
+.logo-glow span {
+  position: relative;
+  color: var(--color-primary);
+  z-index: 2;
+}
+
+/* CAMADA DE LUZ (RECORTADA NO TEXTO) */
+.logo-glow::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: var(--color-primary);
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    #ff3c3c,
+    transparent 60%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.logo-glow:hover::before {
+  opacity: 1;
+}
+
+/* glow leve no hover */
+.logo-glow:hover span {
+  text-shadow:
+    0 0 8px rgba(255, 60, 60, 0.5),
+    0 0 16px rgba(255, 60, 60, 0.3);
 }
