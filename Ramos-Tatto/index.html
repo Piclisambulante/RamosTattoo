@@ -8,6 +8,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ramos-tatto</title>
 </head>
+<div class="gallery-modal" id="galleryModal">
+
+  <button class="gallery-close">✕</button>
+
+  <span class="gallery-tag">PORTFÓLIO COMPLETO</span>
+  <h2 class="gallery-title">GALERIA DE TRABALHOS</h2>
+
+  <div class="gallery-filters">
+    <button class="filter active" data-filter="all">Todos</button>
+    <button class="filter" data-filter="oriental">Oriental</button>
+    <button class="filter" data-filter="geometrico">Geométrico</button>
+    <button class="filter" data-filter="tradicional">Tradicional</button>
+    <button class="filter" data-filter="realismo">Realismo</button>
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-card" data-category="oriental">
+      <img src="src/imagens/oriental.png" alt="Tattoo Oriental">
+      <div class="gallery-overlay">
+        <span>ORIENTAL</span>
+        <h3>TATTOO ORIENTAL</h3>
+        <p>VER MAIS</p>
+      </div>
+    </div>
+
+    <div class="gallery-card" data-category="tradicional">
+      <img src="src/imagens/old.png" alt="Tattoo Tradicional">
+      <div class="gallery-overlay">
+        <span>TRADICIONAL</span>
+        <h3>TATTOO TRADICIONAL</h3>
+        <p>VER MAIS</p>
+      </div>
+    </div>
+
+    <div class="gallery-card" data-category="geometrico">
+      <img src="src/imagens/geometria.png" alt="Tattoo Geométrica">
+      <div class="gallery-overlay">
+        <span>GEOMÉTRICO</span>
+        <h3>TATTOO GEOMÉTRICA</h3>
+        <p>VER MAIS</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <body>
   <header id="header">
@@ -20,18 +66,18 @@
 
       <div class="nav-right">
         <div class="nav-links">
-          <button>Início</button>
-          <button>Estilos</button>
-          <button>Galeria</button>
-          <button>Sobre</button>
-          <button>Contato</button>
+          <a href="#inicio">Início</a>
+          <a href="#estilos">Estilos</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#artista">Sobre</a>
+          <a href="#contato">Contato</a>
         </div>
       </div>
     </nav>
 
   </header>
 
-  <section class="hero">
+  <section class="hero" id="inicio">
     <div class="hero-content">
       <span class="hero-subtitle">ARTE NA PELE</span>
 
@@ -46,8 +92,8 @@
       </p>
 
       <div class="hero-actions">
-        <button class="btn-primary">AGENDE SUA SESSÃO</button>
-        <button class="btn-secondary">Ver Trabalhos</button>
+       <a href="#contato" class="btn-primary">AGENDE SUA SESSÃO</a>
+      <a href="#galeria" class="btn-secondary">Ver Trabalhos</a>
       </div>
     </div>
 
@@ -60,7 +106,7 @@
 
 
   <main>
-    <section class="styles">
+    <section class="styles" id="estilos">
       <span class="tag-styles">ESPECIALIDADES</span>
       <h2 class="title-styles">Nossos Estilos</h2>
 
@@ -90,36 +136,49 @@
         </div>
       </div>
     </section>
-    <section class="portifolio">
+    <section class="portifolio" id="galeria">
       <span class="portifolio-tag">PORTFÓLIO</span>
       <h2 class="portifolio-title">NOSSOS TRABALHOS</h2>
 
-      <div class="portifolio-grid">
-        <div class="portifolio-item">
-          <img src="src/imagens/realismo.png" alt="Tattoo Realismo">
-          <span class="portifolio-texto">VER MAIS</span>
-        </div>
+  <div class="portifolio-grid">
 
-        <div class="portifolio-item">
-          <img src="src/imagens/oriental.png" alt="Tattoo Oriental">
-          <span class="portifolio-texto">VER MAIS</span>
-        </div>
+    <div class="portifolio-item"
+      data-title="Tattoo Oriental"
+      data-description="Arte oriental tradicional com traços fortes e simbologia."
+      data-image="src/imagens/oriental.png">
+      <img src="src/imagens/oriental.png" alt="Tattoo Oriental">
+      <span class="portifolio-texto">VER MAIS</span>
+    </div>
 
-        <div class="portifolio-item">
-          <img src="src/imagens/geometria.png" alt="Tattoo Geométrico">
-          <span class="portifolio-texto">VER MAIS</span>
-        </div>
+    <div class="portifolio-item"
+      data-title="Tattoo Geométrica"
+      data-description="Padrões geométricos precisos e simétricos."
+      data-image="src/imagens/geometria.png">
+      <img src="src/imagens/geometria.png" alt="Tattoo Geométrica">
+      <span class="portifolio-texto">VER MAIS</span>
+    </div>
 
-        <div class="portifolio-item">
-          <img src="src/imagens/old.png" alt="Tattoo Tradicional">
-          <span class="portifolio-texto">VER MAIS</span>
-        </div>
-      </div>
+    <div class="portifolio-item"
+      data-title="Tattoo Tradicional"
+      data-description="Old school com linhas marcantes e cores intensas."
+      data-image="src/imagens/old.png">
+      <img src="src/imagens/old.png" alt="Tattoo Tradicional">
+      <span class="portifolio-texto">VER MAIS</span>
+    </div>
 
-      <a href="#" class="portifolio-link">VER GALERIA COMPLETA</a>
-    </section>
+    <div class="portifolio-item"
+      data-title="Tattoo Realismo"
+      data-description="Arte Realismo tradicional com traços fortes e simbologia."
+      data-image="src/imagens/realismo.png">
+      <img src="src/imagens/realismo.png" alt="Tattoo Oriental">
+      <span class="portifolio-texto">VER MAIS</span>
+    </div>
+  </div>
 
-    <section class="artista">
+  <a href="#" class="portifolio-link">VER GALERIA COMPLETA</a>
+</section>
+
+    <section class="artista" id="artista">
       
       <div class="artista-grind">
         
@@ -162,10 +221,26 @@
           </div>
         </div>
       </div>
+     <div class="modal-overlay" id="tattooModal">
+  <div class="modal-content">
 
+  <button class="gallery-close">✕</button>
+
+    <div class="modal-image-wrapper">
+      <img class="modal-image" src="" alt="">
+    </div>
+
+    <div class="modal-info">
+      <span class="modal-tag">TATUAGEM</span>
+      <h3 class="modal-title"></h3>
+      <p class="modal-description"></p>
+    </div>
+
+  </div>
+</div>
     </section>
 
-    <section class="contact-session">
+    <section class="contact-session" id="contato">
       <div class="contact-header">
         <span class="contact-tag">FALE CONOSCO</span>
         <h2 class="contact-title">MARQUE SUA SESSÃO</h2>
