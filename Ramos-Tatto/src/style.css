@@ -105,7 +105,7 @@ header {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 24px 40px;
-
+  gap: 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,43 +132,54 @@ header {
 }*/
 
 
+/* CONTAINER DOS LINKS */
 .nav-links {
   display: flex;
-  gap: 36px;
+  align-items: center;
+  gap: 40px; /* controla o espaçamento entre os links */
 }
 
-.nav-links button {
-  background: none;
-  border: none;
-  color: var(--color-text-dim);
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
+
+/* LINKS COMO BOTÕES */
+.nav-links a {
   position: relative;
-  padding: 6px 0;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  color: #f5f5f5;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 12px 4;
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
-.nav-links button::after {
+/* LINHA INFERIOR ANIMADA */
+.nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
-  width: 100%;
+  width: 0%;
   height: 2px;
-  background: var(--color-primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  background: #e50914;
+  transition: width 0.3s ease;
 }
 
-.nav-links button:hover {
-  color: var(--color-text-light);
+/* HOVER */
+.nav-links a:hover {
+  color: #e50914;
 }
 
-.nav-links button:hover::after {
-  transform: scaleX(1);
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* HEADER SCROLL (caso você já use) */
+header.scrolled .nav-links a {
+  color: #fff;
 }
 
 /* HEADER SCROLL */
@@ -772,4 +783,282 @@ header.scrolled .nav-logo h1 {
   text-shadow:
     0 0 8px rgba(255, 60, 60, 0.5),
     0 0 16px rgba(255, 60, 60, 0.3);
+}
+/* ===== MODAL PORTFÓLIO (REFINADO) ===== */
+
+/* ===============================
+   MODAL OVERLAY
+=============================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===============================
+   MODAL CONTENT (LAYOUT SPLIT)
+=============================== */
+.modal-content {
+  background: #0b0b0b;
+  width: 90%;
+  max-width: 1200px;
+  height: 80vh;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* imagem maior */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
+}
+
+/* ===============================
+   BOTÃO FECHAR
+=============================== */
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ===============================
+   IMAGEM
+=============================== */
+.modal-image-wrapper {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* agora faz sentido */
+}
+
+/* ===============================
+   TEXTO
+=============================== */
+.modal-info {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-tag {
+  color: #e50914;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.modal-description {
+  color: #b5b5b5;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+/* ===============================
+   RESPONSIVO (MOBILE)
+=============================== */
+@media (max-width: 900px) {
+  .modal-content {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: 90vh;
+  }
+
+  .modal-image-wrapper {
+    height: 50vh;
+  }
+
+  .modal-info {
+    padding: 28px;
+  }
+
+  .modal-title {
+    font-size: 26px;
+  }
+}
+/* ===============================
+   GALERIA MODAL
+=============================== */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #111, #000);
+  padding: 60px 80px;
+  z-index: 9998;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* FECHAR */
+/* BOTÃO FECHAR COM ANIMAÇÃO */
+.gallery-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #e50914;
+  color: #e50914;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* HOVER — GIRO + GLOW */
+.gallery-close:hover {
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+/* ANIMAÇÃO AO FECHAR */
+.gallery-close.closing {
+  animation: closeSpin 0.5s ease forwards;
+}
+
+@keyframes closeSpin {
+  to {
+    transform: rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+
+/* TÍTULOS */
+.gallery-tag {
+  color: #e50914;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.gallery-title {
+  color: #fff;
+  font-size: 46px;
+  margin: 10px 0 30px;
+}
+
+/* FILTROS */
+.gallery-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.gallery-filters .filter {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.gallery-filters .filter.active,
+.gallery-filters .filter:hover {
+  background: #e50914;
+  color: #000;
+  border-color: #e50914;
+}
+
+/* GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.gallery-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+/* OVERLAY */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.gallery-overlay span {
+  color: #e50914;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.gallery-overlay h3 {
+  color: #fff;
+  margin: 6px 0;
+}
+
+.gallery-overlay p {
+  color: #aaa;
+  font-size: 13px;
+}
+html {
+  scroll-behavior: smooth;
 }
