@@ -62,38 +62,6 @@ document.querySelectorAll(".portifolio-item").forEach(item => {
   });
 });
 
-function enviarParaWhatsApp() {
-    const nome = document.getElementById('nome').value;
-    const tattoo = document.getElementById('tattoo').value;
-    const mensagem = document.getElementById('mensagem').value;
-    const local = document.getElementById('local').value;
-
-    const telefone = "5547984817923"; 
-
-    if (!nome || !tattoo) {
-        alert("Por favor, preencha seu nome e o produto.");
-        return;
-    }
-
-    const texto = `Olá! Meu nome é ${nome}. Estou interessado um(a): ${tattoo} no(a) ${local}. \n\n Detalhamento: ${mensagem}`;
-    const textoCodificado = encodeURIComponent(texto);
-    const url = `https://wa.me/${telefone}?text=${textoCodificado}`;
-
-    window.open(url, '_blank');
-}
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const btnEnviar = document.querySelector('.formulario button'); 
-    
-    if (btnEnviar) {
-        btnEnviar.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            enviarParaWhatsApp();
-        });
-    }
-});
-
 function closeModal() {
   modal.classList.remove("active");
   document.body.style.overflow = "";
@@ -162,4 +130,34 @@ document.querySelectorAll(".gallery-card").forEach(card => {
     modal.classList.add("active");
     document.body.style.overflow = "hidden";
   });
+});
+const openPopupBtn = document.getElementById('open-whatsapp-popup');
+const waPopup = document.getElementById('waPopup');
+const closePopupBtn = document.getElementById('closeWaPopup');
+const confirmBtn = document.getElementById('confirmWa');
+
+// Mensagem padrão
+const message = "Olá! Gostaria de fazer um orçamento.";
+const phone = "5547992885881";
+
+// Abre o popup
+openPopupBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // Não deixa abrir o link na hora
+  waPopup.classList.add('active');
+});
+
+// Fecha o popup
+const closePopup = () => waPopup.classList.remove('active');
+closePopupBtn.addEventListener('click', closePopup);
+
+// Fecha se clicar fora do card
+waPopup.addEventListener('click', (e) => {
+  if(e.target === waPopup) closePopup();
+});
+
+// Confirmar e Redirecionar
+confirmBtn.addEventListener('click', () => {
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+  closePopup();
 });
