@@ -132,26 +132,31 @@ header {
 }*/
 
 
-/* CONTAINER DOS LINKS */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 40px; /* controla o espaçamento entre os links */
+  gap: 30px; /* Distância entre um link e outro */
+}
+
+/* LINKS INDIVIDUAIS */
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  font-size: 13px; /* Diminuí levemente para ficar mais elegante */
+  letter-spacing: 2px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 10px; /* CORRIGIDO: Adicionado px e aumentado o espaço lateral */
+  white-space: nowrap; /* Impede que o link quebre linha */
 }
 
 
 /* LINKS COMO BOTÕES */
 .nav-links a {
   position: relative;
-  text-decoration: none;
   background: transparent;
   border: none;
   color: #f5f5f5;
-  font-size: 14px;
-  letter-spacing: 2px;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 12px 4;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
@@ -1111,4 +1116,438 @@ header.scrolled .nav-logo h1 {
 }
 html {
   scroll-behavior: smooth;
+}
+.contact-session {
+  padding: 120px 8%;
+}
+
+/* GRID PRINCIPAL */
+.contact-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+/* GRID DOS 4 CARDS */
+.contact-info-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* PADRÃO VISUAL DOS CARDS */
+.contact-card,
+.contact-cta {
+  background: #111;
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid rgba(230, 57, 47, 0.55);
+
+  box-shadow:
+    0 0 0 1px rgba(230, 57, 47, 0.25),
+    0 15px 40px rgba(0, 0, 0, 0.9);
+
+  transition: all 0.4s ease;
+}
+
+/* HOVER GERAL */
+.contact-card:hover,
+.contact-cta:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 25px rgba(230, 57, 47, 0.6),
+    0 0 50px rgba(230, 57, 47, 0.3),
+    0 25px 60px rgba(0, 0, 0, 0.95);
+}
+
+/* TÍTULOS DOS CARDS */
+.contact-card h3 {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* TEXTOS */
+.contact-card p {
+  color: #b5b5b5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-card .small-text {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ===============================
+   CARD GRANDE (CTA)
+   =============================== */
+
+.contact-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 25px;
+}
+
+/* TÍTULO CTA */
+.cta-title {
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* TEXTO CTA */
+.cta-text {
+  color: #b5b5b5;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===============================
+   BOTÃO WHATSAPP — INSANO
+   =============================== */
+
+.cta-button {
+  margin: 0 auto;
+  padding: 16px 46px;
+  border-radius: 999px;
+
+  background: #e6392f;
+  color: #000;
+
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 20px rgba(230, 57, 47, 0.7),
+    0 0 40px rgba(230, 57, 47, 0.4);
+
+  transition: all 0.35s ease;
+}
+
+/* HOVER DO BOTÃO */
+.cta-button:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow:
+    0 0 30px rgba(230, 57, 47, 1),
+    0 0 60px rgba(230, 57, 47, 0.8),
+    0 0 100px rgba(230, 57, 47, 0.5);
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+@media (max-width: 900px) {
+  .contact-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-list {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===============================
+   CONTATO — CABEÇALHO DA SECTION
+   =============================== */
+
+.contact-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 80px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* TAG PEQUENA (FALE CONOSCO) */
+.contact-tag {
+  color: #e6392f;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(230, 57, 47, 0.6);
+}
+
+/* TÍTULO PRINCIPAL */
+.contact-title {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* SUBTÍTULO */
+.contact-subtitle {
+  font-size: 15px;
+  color: #b5b5b5;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 32px;
+    letter-spacing: 4px;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* ===============================
+   CONTATO — ÍCONES COM IMAGEM
+   =============================== */
+
+.contact-card .icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 1px solid rgba(230, 57, 47, 0.6);
+  background: rgba(0, 0, 0, 0.6);
+
+  box-shadow:
+    0 0 10px rgba(230, 57, 47, 0.4),
+    inset 0 0 8px rgba(230, 57, 47, 0.3);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card .icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(96%)
+    saturate(4200%) hue-rotate(350deg) brightness(95%) contrast(95%);
+}
+
+/* HOVER DO CARD → ÍCONE REAGE */
+.contact-card:hover .icon {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 18px rgba(230, 57, 47, 0.9),
+    inset 0 0 12px rgba(230, 57, 47, 0.5);
+}
+
+.contact-card:hover .icon img {
+  filter: brightness(1.2)
+    drop-shadow(0 0 6px rgba(230, 57, 47, 0.9));
+}
+.contact-link-wrapper {
+  text-decoration: none; /* Remove sublinhado */
+  color: inherit;       /* Mantém a cor original do texto */
+  display: flex;        /* Mantém o alinhamento interno se necessário */
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-card.whatsapp {
+  cursor: pointer; /* Mostra a mãozinha de clique no card todo */
+}
+
+/* Ajuste global para evitar transbordamento */
+section:not(.hero) {
+    padding: 60px 5%; /* Padding em porcentagem para telas menores */
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Notebooks e Telas Médias (1024px) */
+@media (max-width: 1024px) {
+    .hero-title { font-size: 80px; }
+    .nav-container { padding: 20px 5%; }
+}
+/* Tablets e Celulares (768px) */
+@media (max-width: 768px) {
+    .artista-grind, .studio-grind {
+        flex-direction: column; /* Empilha a foto e o texto */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .artista-text, .studio-text {
+        text-align: center;
+    }
+
+    .artista-tag, .artista-title, .studio-tag, .studio-title {
+        text-align: center; /* Centraliza títulos no mobile */
+    }
+
+    .artista-infos {
+        justify-content: center;
+        flex-wrap: wrap; /* Faz os números (10+, 2000+) quebrarem linha */
+        gap: 20px;
+    }
+
+    .logo-photo img, .artista-photo img {
+        width: 100%; /* Imagem ocupa a largura disponível */
+        max-width: 400px;
+    }
+}
+@media (max-width: 900px) {
+    /* Estilos: 2 colunas no tablet */
+    .styles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Portfólio: 2 colunas */
+    .portifolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Celulares pequenos: 1 coluna em tudo */
+    .styles-grid, .portifolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 55px; /* Título Ramos Tattoo menor para não cortar */
+    }
+
+    .hero-actions {
+        flex-direction: column; /* Botões um em cima do outro */
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+}
+@media (max-width: 850px) {
+    .contact-content-grid {
+        grid-template-columns: 1fr; /* Info em cima, CTA embaixo */
+        gap: 40px;
+    }
+
+    .contact-info-list {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 cards */
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-info-list {
+        grid-template-columns: 1fr; /* Cards empilhados no celular */
+    }
+    
+    .contact-title {
+        font-size: 28px;
+    }
+}
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
+/* Fundo do Popup */
+.wa-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wa-popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Card Central */
+.wa-popup-card {
+  background: #111;
+  border: 1px solid var(--color-primary);
+  padding: 40px;
+  border-radius: 24px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  transform: translateY(30px);
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 50px rgba(230, 57, 47, 0.2);
+}
+
+.wa-popup-overlay.active .wa-popup-card {
+  transform: translateY(0);
+}
+
+.wa-icon-container img {
+  width: 50px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 8px #25d366);
+}
+
+/* Caixa da Mensagem */
+.wa-message-box {
+  background: #080808;
+  border-left: 4px solid var(--color-primary);
+  padding: 20px;
+  margin: 25px 0;
+  border-radius: 8px;
+  font-style: italic;
+  color: #ccc;
+}
+
+.wa-popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.wa-popup-close:hover {
+  color: var(--color-primary);
 }
