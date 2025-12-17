@@ -328,19 +328,24 @@
 <div class="wa-popup-overlay" id="waPopup">
   <div class="wa-popup-card">
     <button class="wa-popup-close" id="closeWaPopup">✕</button>
+    
     <div class="wa-icon-container">
       <img src="./src/imagens/whatsapp.png" alt="WhatsApp Icon">
     </div>
-    <h3>Iniciar Conversa</h3>
-    <p>Você será redirecionado para o WhatsApp com a seguinte mensagem:</p>
     
-    <div class="wa-message-box">
-      <span>"Olá! Gostaria de fazer um orçamento."</span>
-    </div>
+    <h3>Iniciar Orçamento</h3>
+    <p>Preencha os detalhes abaixo para agilizar seu atendimento:</p>
 
-    <button id="confirmWa" class="btn-primary cta-button" style="width: 100%;">
-      CONFIRMAR E IR
-    </button>
+    <div class="formulario">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="text" id="tattoo" placeholder="O que deseja tatuar? (Ex: Leão)">
+      <input type="text" id="local" placeholder="Local do corpo">
+      <textarea id="mensagem" placeholder="Conte mais detalhes da sua ideia..."></textarea>
+
+      <button type="button" id="btnEnviarWhats" class="btn-primary cta-button" style="width: 100%;">
+        ENVIAR PARA O WHATSAPP
+      </button> 
+    </div>
   </div>
 </div>
 </div>
