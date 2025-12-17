@@ -1597,3 +1597,31 @@ section:not(.hero) {
   max-width: 450px; /* Um pouco mais largo para o form ficar confortável */
   padding: 30px;
 }
+/* Estilo para o campo de data e os outros inputs */
+.formulario input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    background: #080808; /* Fundo escuro igual aos outros */
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #616060; /* Cor do texto escrito */
+    font-family: var(--font-family-body);
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+/* Cor do texto quando o campo está em foco (selecionado) */
+.formulario input[type="date"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(230, 57, 47, 0.4);
+}
+
+/* ESTILIZANDO O ÍCONE DO CALENDÁRIO (Muito importante!) */
+/* Isso muda a cor daquele ícone de calendário que fica no canto do input */
+.formulario input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(320deg); /* Isso deixa o ícone vermelho */
+    cursor: pointer;
+}
