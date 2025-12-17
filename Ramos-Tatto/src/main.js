@@ -62,6 +62,38 @@ document.querySelectorAll(".portifolio-item").forEach(item => {
   });
 });
 
+function enviarParaWhatsApp() {
+    const nome = document.getElementById('nome').value;
+    const tattoo = document.getElementById('tattoo').value;
+    const mensagem = document.getElementById('mensagem').value;
+    const local = document.getElementById('local').value;
+
+    const telefone = "5547984817923"; 
+
+    if (!nome || !tattoo) {
+        alert("Por favor, preencha seu nome e o produto.");
+        return;
+    }
+
+    const texto = `Olá! Meu nome é ${nome}. Estou interessado um(a): ${tattoo} no(a) ${local}. \n\n Detalhamento: ${mensagem}`;
+    const textoCodificado = encodeURIComponent(texto);
+    const url = `https://wa.me/${telefone}?text=${textoCodificado}`;
+
+    window.open(url, '_blank');
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btnEnviar = document.querySelector('.formulario button'); 
+    
+    if (btnEnviar) {
+        btnEnviar.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            enviarParaWhatsApp();
+        });
+    }
+});
+
 function closeModal() {
   modal.classList.remove("active");
   document.body.style.overflow = "";
