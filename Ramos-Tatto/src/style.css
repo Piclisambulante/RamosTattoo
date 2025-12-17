@@ -1551,3 +1551,49 @@ section:not(.hero) {
 .wa-popup-close:hover {
   color: var(--color-primary);
 }
+/* Estilização do Formulário dentro do Popup */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.formulario h2 {
+  font-size: 18px;
+  color: var(--color-primary);
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.formulario input, 
+.formulario textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: #080808;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-family: var(--font-family-body);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito de foco com o brilho vermelho */
+.formulario input:focus, 
+.formulario textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(230, 57, 47, 0.4);
+}
+
+.formulario textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Ajuste no card para caber o form */
+.wa-popup-card {
+  max-width: 450px; /* Um pouco mais largo para o form ficar confortável */
+  padding: 30px;
+}
