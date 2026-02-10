@@ -226,7 +226,7 @@ header.scrolled .nav-logo h1 {
   align-items: center;
   justify-content: center;
   padding: 100px 40px;
-  background-image: url('/src/imagens/inicio.png');
+  background-image: url('src/imagens/inicio.png')/;
   background-size: cover;
   background-position: 50% 30%;
   text-align: center;
