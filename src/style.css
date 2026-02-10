@@ -1,0 +1,1627 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIAVEIS GLOBAIS (Estilo e Cores do Design) */
+:root {
+  --color-primary: #e6392f;
+  --color-secondary: #ff9900;
+  --color-background: #0d0d0d;
+  --color-text-light: #f4f4f4;
+  --color-text-dim: #aaa;
+  --font-family-title: 'Georgia', serif;
+  --font-family-body: 'Helvetica', sans-serif;
+  --max-width: 1280px;
+}
+
+/* BASE */
+body {
+  font-family: var(--font-family-body);
+  background: var(--color-background);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+section:not(.hero) {
+  padding: 80px 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* TIPOGRAFIA GERAL */
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-title);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* BOTÕES GERAIS E AÇÕES */
+.btn-primary,
+.btn-secondary,
+.cta-button {
+  padding: 14px 35px;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.btn-primary,
+.cta-button {
+  background: var(--color-primary);
+  color: var(--color-background);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover,
+.cta-button:hover {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-light);
+  border-color: var(--color-text-light);
+}
+
+.btn-secondary:hover {
+  background: var(--color-text-light);
+  color: var(--color-background);
+  border-color: var(--color-text-light);
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.6)
+  );
+/* so pra tirar uma foto
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s ease;*/
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 40px;
+  gap: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.nav-logo h1 {
+  color: var(--color-primary);
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-weight: 900;
+  position: relative;
+}
+
+.nav-logo h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 45%;
+  height: 2px;
+  background: var(--color-primary);
+  opacity: 0.7;
+}*/
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Distância entre um link e outro */
+}
+
+/* LINKS INDIVIDUAIS */
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  font-size: 13px; /* Diminuí levemente para ficar mais elegante */
+  letter-spacing: 2px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 10px; /* CORRIGIDO: Adicionado px e aumentado o espaço lateral */
+  white-space: nowrap; /* Impede que o link quebre linha */
+}
+
+
+/* LINKS COMO BOTÕES */
+.nav-links a {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #f5f5f5;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* LINHA INFERIOR ANIMADA */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #e50914;
+  transition: width 0.3s ease;
+}
+
+/* HOVER */
+.nav-links a:hover {
+  color: #e50914;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* HEADER SCROLL (caso você já use) */
+header.scrolled .nav-links a {
+  color: #fff;
+}
+
+/* HEADER SCROLL */
+header.scrolled {
+  background: rgba(5, 5, 5, 0.96);
+}
+
+header.scrolled .nav-container {
+  padding: 16px 40px;
+}
+
+header.scrolled .nav-logo h1 {
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+/* ÍCONES SOCIAIS */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-left: 30px;
+}
+
+.social-icons a {
+  color: var(--color-text-dim);
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--color-text-light);
+}
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 40px;
+  background-image: url('/src/imagens/inicio.png');
+  background-size: cover;
+  background-position: 50% 30%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(13, 13, 13, 1) 100%),
+    linear-gradient(to right,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15));
+}
+
+
+.hero>* {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.hero-title {
+  font-size: 120px;
+  line-height: 0.9;
+  margin: 0;
+  font-weight: 900;
+}
+
+.hero-title-main {
+  color: var(--color-text-light);
+}
+
+.hero-title-sub {
+  color: var(--color-primary);
+  display: block;
+}
+
+.hero-description {
+  font-size: 16px;
+  margin: 20px auto 40px;
+  max-width: 500px;
+  color: #FFFFFF
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.scroll-icon {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* botão fixo do mouse */
+.scroll-icon .mouse-button {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+}
+
+/* scroll animado */
+.scroll-icon .scroll-button {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  animation: scroll-down 1.6s infinite;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.scroll-icon.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.styles {
+    padding: 100px 0;
+}
+
+
+.tag-styles {
+  color: var(--color-primary);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+
+.title-styles {
+  font-size: 40px;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.styles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.styles-card {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #bfbfbf;
+  background: radial-gradient(circle at top,
+      #141414 0%,
+      #0b0b0b 60%,
+      #000 100%);
+  background: linear-gradient(180deg, #181818, #111);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 24px;
+  height: 235px;
+  max-width: 1320px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+
+
+.styles-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 165, 0, 0.2),
+    0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+
+.styles-card .icon {
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+
+.styles-card h3 {
+  color: var(--color-text-light);
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+
+.styles-card p {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.portifolio {
+  text-align: center;
+}
+
+
+.portifolio-tag {
+  color: var(--color-primary);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.portifolio-title {
+  font-size: 40px;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.portifolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  overflow: visible;
+}
+
+.portifolio-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.portifolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.portifolio-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  transition: background 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.portifolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+.portifolio-item:hover img {
+  transform: scale(1.08);
+}
+
+.portifolio-item:hover::after {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+.portifolio-texto {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.portifolio-item:hover .portifolio-texto {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portifolio-link {
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 6px;
+  display: inline-block;
+  margin-top: 48px;
+  text-decoration: none;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.portifolio-link:hover {
+  color: var(--color-secondary);
+  transform: translateY(-3px);
+  border-bottom: 1px solid var(--color-secondary);
+  padding-bottom: 6px;
+}
+
+.artista-tag {
+  color: var(--color-primary);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: -10px;
+  text-align: left;
+}
+
+.artista-title {
+  font-size: 40px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.artista {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.artista-grind {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.artista-photo img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+
+.artista-text {
+  flex: 1;
+  text-align: left;
+  line-height: 1.7;
+}
+
+
+.artista-infos {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.artista-divisoria {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 32px 0;
+}
+
+.artista-info {
+  text-align: center;
+}
+
+.artista-info h3 {
+  font-size: 32px;
+  color: var(--color-primary);
+}
+
+.artista-info p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.studio-tag {
+  color: var(--color-primary);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: -10px;
+  text-align: left;
+}
+
+.studio-title {
+  font-size: 40px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.studio {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.studio-grind {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-photo img {
+  width: 400px  ;
+  border-radius: 20px;
+  object-fit: cover;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.15));
+}
+
+
+.studio-text {
+  flex: 1;
+  text-align: left;
+  line-height: 1.7;
+}
+
+
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .social-icons {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .hero-title {
+    font-size: 60px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer {
+  width: 100%;
+  padding: 24px 16px;
+  background: linear-gradient(180deg, #0f0f0f, #050505);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 20px 12px;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.6)
+  );
+
+  /* --so pra tirar uma foto
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+*/
+  transition:
+    background 0.4s ease,
+    padding 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+header.scrolled {
+  background: rgba(5, 5, 5, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+header.scrolled .nav-container {
+  padding: 14px 40px;
+}
+
+
+header.scrolled .nav-logo h1 {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+
+.nav-logo h1 {
+  transition: font-size 0.4s ease, letter-spacing 0.4s ease;
+}
+/* ===== LOGO ILUMINADA COM MOUSE ===== */
+
+.logo-glow {
+  position: relative;
+  font-weight: 900;
+  letter-spacing: 4px;
+  cursor: pointer;
+  color: transparent;
+}
+
+/* TEXTO BASE */
+.logo-glow span {
+  position: relative;
+  color: var(--color-primary);
+  z-index: 2;
+}
+
+/* CAMADA DE LUZ (RECORTADA NO TEXTO) */
+.logo-glow::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: var(--color-primary);
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    #ff3c3c,
+    transparent 60%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.logo-glow:hover::before {
+  opacity: 1;
+}
+
+/* glow leve no hover */
+.logo-glow:hover span {
+  text-shadow:
+    0 0 8px rgba(255, 60, 60, 0.5),
+    0 0 16px rgba(255, 60, 60, 0.3);
+}
+/* ===== MODAL PORTFÓLIO (REFINADO) ===== */
+
+/* ===============================
+   MODAL OVERLAY
+=============================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  /*backdrop-filter: blur(6px); so pra tirar uma fotinha */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===============================
+   MODAL CONTENT (LAYOUT SPLIT)
+=============================== */
+.modal-content {
+  background: #0b0b0b;
+  width: 90%;
+  max-width: 1200px;
+  height: 80vh;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* imagem maior */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
+}
+
+/* ===============================
+   BOTÃO FECHAR
+=============================== */
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ===============================
+   IMAGEM
+=============================== */
+.modal-image-wrapper {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* agora faz sentido */
+}
+
+/* ===============================
+   TEXTO
+=============================== */
+.modal-info {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-tag {
+  color: #e50914;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.modal-description {
+  color: #b5b5b5;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+/* ===============================
+   RESPONSIVO (MOBILE)
+=============================== */
+@media (max-width: 900px) {
+  .modal-content {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: 90vh;
+  }
+
+  .modal-image-wrapper {
+    height: 50vh;
+  }
+
+  .modal-info {
+    padding: 28px;
+  }
+
+  .modal-title {
+    font-size: 26px;
+  }
+}
+/* ===============================
+   GALERIA MODAL
+=============================== */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #111, #000);
+  padding: 60px 80px;
+  z-index: 9998;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* FECHAR */
+/* BOTÃO FECHAR COM ANIMAÇÃO */
+.gallery-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #e50914;
+  color: #e50914;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* HOVER — GIRO + GLOW */
+.gallery-close:hover {
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+/* ANIMAÇÃO AO FECHAR */
+.gallery-close.closing {
+  animation: closeSpin 0.5s ease forwards;
+}
+
+@keyframes closeSpin {
+  to {
+    transform: rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+
+/* TÍTULOS */
+.gallery-tag {
+  color: #e50914;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.gallery-title {
+  color: #fff;
+  font-size: 46px;
+  margin: 10px 0 30px;
+}
+
+/* FILTROS */
+.gallery-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.gallery-filters .filter {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.gallery-filters .filter.active,
+.gallery-filters .filter:hover {
+  background: #e50914;
+  color: #000;
+  border-color: #e50914;
+}
+
+/* GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.gallery-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+/* OVERLAY */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.gallery-overlay span {
+  color: #e50914;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.gallery-overlay h3 {
+  color: #fff;
+  margin: 6px 0;
+}
+
+.gallery-overlay p {
+  color: #aaa;
+  font-size: 13px;
+}
+html {
+  scroll-behavior: smooth;
+}
+.contact-session {
+  padding: 120px 8%;
+}
+
+/* GRID PRINCIPAL */
+.contact-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+/* GRID DOS 4 CARDS */
+.contact-info-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* PADRÃO VISUAL DOS CARDS */
+.contact-card,
+.contact-cta {
+  background: #111;
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid rgba(230, 57, 47, 0.55);
+
+  box-shadow:
+    0 0 0 1px rgba(230, 57, 47, 0.25),
+    0 15px 40px rgba(0, 0, 0, 0.9);
+
+  transition: all 0.4s ease;
+}
+
+/* HOVER GERAL */
+.contact-card:hover,
+.contact-cta:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 25px rgba(230, 57, 47, 0.6),
+    0 0 50px rgba(230, 57, 47, 0.3),
+    0 25px 60px rgba(0, 0, 0, 0.95);
+}
+
+/* TÍTULOS DOS CARDS */
+.contact-card h3 {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* TEXTOS */
+.contact-card p {
+  color: #b5b5b5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-card .small-text {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ===============================
+   CARD GRANDE (CTA)
+   =============================== */
+
+.contact-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 25px;
+}
+
+/* TÍTULO CTA */
+.cta-title {
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* TEXTO CTA */
+.cta-text {
+  color: #b5b5b5;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===============================
+   BOTÃO WHATSAPP — INSANO
+   =============================== */
+
+.cta-button {
+  margin: 0 auto;
+  padding: 16px 46px;
+  border-radius: 999px;
+
+  background: #e6392f;
+  color: #000;
+
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 20px rgba(230, 57, 47, 0.7),
+    0 0 40px rgba(230, 57, 47, 0.4);
+
+  transition: all 0.35s ease;
+}
+
+/* HOVER DO BOTÃO */
+.cta-button:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow:
+    0 0 30px rgba(230, 57, 47, 1),
+    0 0 60px rgba(230, 57, 47, 0.8),
+    0 0 100px rgba(230, 57, 47, 0.5);
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+@media (max-width: 900px) {
+  .contact-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-list {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===============================
+   CONTATO — CABEÇALHO DA SECTION
+   =============================== */
+
+.contact-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 80px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* TAG PEQUENA (FALE CONOSCO) */
+.contact-tag {
+  color: #e6392f;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(230, 57, 47, 0.6);
+}
+
+/* TÍTULO PRINCIPAL */
+.contact-title {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* SUBTÍTULO */
+.contact-subtitle {
+  font-size: 15px;
+  color: #b5b5b5;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 32px;
+    letter-spacing: 4px;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* ===============================
+   CONTATO — ÍCONES COM IMAGEM
+   =============================== */
+
+.contact-card .icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 1px solid rgba(230, 57, 47, 0.6);
+  background: rgba(0, 0, 0, 0.6);
+
+  box-shadow:
+    0 0 10px rgba(230, 57, 47, 0.4),
+    inset 0 0 8px rgba(230, 57, 47, 0.3);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card .icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(96%)
+    saturate(4200%) hue-rotate(350deg) brightness(95%) contrast(95%);
+}
+
+/* HOVER DO CARD → ÍCONE REAGE */
+.contact-card:hover .icon {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 18px rgba(230, 57, 47, 0.9),
+    inset 0 0 12px rgba(230, 57, 47, 0.5);
+}
+
+.contact-card:hover .icon img {
+  filter: brightness(1.2)
+    drop-shadow(0 0 6px rgba(230, 57, 47, 0.9));
+}
+.contact-link-wrapper {
+  text-decoration: none; /* Remove sublinhado */
+  color: inherit;       /* Mantém a cor original do texto */
+  display: flex;        /* Mantém o alinhamento interno se necessário */
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-card.whatsapp {
+  cursor: pointer; /* Mostra a mãozinha de clique no card todo */
+}
+
+/* Ajuste global para evitar transbordamento */
+section:not(.hero) {
+    padding: 60px 5%; /* Padding em porcentagem para telas menores */
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Notebooks e Telas Médias (1024px) */
+@media (max-width: 1024px) {
+    .hero-title { font-size: 80px; }
+    .nav-container { padding: 20px 5%; }
+}
+/* Tablets e Celulares (768px) */
+@media (max-width: 768px) {
+    .artista-grind, .studio-grind {
+        flex-direction: column; /* Empilha a foto e o texto */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .artista-text, .studio-text {
+        text-align: center;
+    }
+
+    .artista-tag, .artista-title, .studio-tag, .studio-title {
+        text-align: center; /* Centraliza títulos no mobile */
+    }
+
+    .artista-infos {
+        justify-content: center;
+        flex-wrap: wrap; /* Faz os números (10+, 2000+) quebrarem linha */
+        gap: 20px;
+    }
+
+    .logo-photo img, .artista-photo img {
+        width: 100%; /* Imagem ocupa a largura disponível */
+        max-width: 400px;
+    }
+}
+@media (max-width: 900px) {
+    /* Estilos: 2 colunas no tablet */
+    .styles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Portfólio: 2 colunas */
+    .portifolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Celulares pequenos: 1 coluna em tudo */
+    .styles-grid, .portifolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 55px; /* Título Ramos Tattoo menor para não cortar */
+    }
+
+    .hero-actions {
+        flex-direction: column; /* Botões um em cima do outro */
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+}
+@media (max-width: 850px) {
+    .contact-content-grid {
+        grid-template-columns: 1fr; /* Info em cima, CTA embaixo */
+        gap: 40px;
+    }
+
+    .contact-info-list {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 cards */
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-info-list {
+        grid-template-columns: 1fr; /* Cards empilhados no celular */
+    }
+    
+    .contact-title {
+        font-size: 28px;
+    }
+}
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
+/* Fundo do Popup */
+.wa-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  /*backdrop-filter: blur(10px); so pra tirar uma foto*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wa-popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Card Central */
+.wa-popup-card {
+  background: #111;
+  border: 1px solid var(--color-primary);
+  padding: 40px;
+  border-radius: 24px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  transform: translateY(30px);
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 50px rgba(230, 57, 47, 0.2);
+}
+
+.wa-popup-overlay.active .wa-popup-card {
+  transform: translateY(0);
+}
+
+.wa-icon-container img {
+  width: 50px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 8px #25d366);
+}
+
+/* Caixa da Mensagem */
+.wa-message-box {
+  background: #080808;
+  border-left: 4px solid var(--color-primary);
+  padding: 20px;
+  margin: 25px 0;
+  border-radius: 8px;
+  font-style: italic;
+  color: #ccc;
+}
+
+.wa-popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.wa-popup-close:hover {
+  color: var(--color-primary);
+}
+/* Estilização do Formulário dentro do Popup */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.formulario h2 {
+  font-size: 18px;
+  color: var(--color-primary);
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.formulario input, 
+.formulario textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: #080808;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-family: var(--font-family-body);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito de foco com o brilho vermelho */
+.formulario input:focus, 
+.formulario textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(230, 57, 47, 0.4);
+}
+
+.formulario textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Ajuste no card para caber o form */
+.wa-popup-card {
+  max-width: 450px; /* Um pouco mais largo para o form ficar confortável */
+  padding: 30px;
+}
+/* Estilo para o campo de data e os outros inputs */
+.formulario input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    background: #080808; /* Fundo escuro igual aos outros */
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #616060; /* Cor do texto escrito */
+    font-family: var(--font-family-body);
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+/* Cor do texto quando o campo está em foco (selecionado) */
+.formulario input[type="date"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(230, 57, 47, 0.4);
+}
+
+/* ESTILIZANDO O ÍCONE DO CALENDÁRIO (Muito importante!) */
+/* Isso muda a cor daquele ícone de calendário que fica no canto do input */
+.formulario input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(320deg); /* Isso deixa o ícone vermelho */
+    cursor: pointer;
+}

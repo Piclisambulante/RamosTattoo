@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="stylesheet" href="/src/style.css">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./src/imagens/bolinha.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ramos-tatto</title>
+</head>
+<div class="gallery-modal" id="galleryModal">
+
+  <button class="gallery-close">✕</button>
+
+  <span class="gallery-tag">PORTFÓLIO COMPLETO</span>
+  <h2 class="gallery-title">GALERIA DE TRABALHOS</h2>
+
+  <div class="gallery-filters">
+    <button class="filter active" data-filter="all">Todos</button>
+    <button class="filter" data-filter="oriental">Oriental</button>
+    <button class="filter" data-filter="geometrico">Geométrico</button>
+    <button class="filter" data-filter="tradicional">Tradicional</button>
+    <button class="filter" data-filter="realismo">Realismo</button>
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-card" data-category="oriental">
+      <img src="src/imagens/oriental.png" alt="Tattoo Oriental">
+      <div class="gallery-overlay">
+        <span>ORIENTAL</span>
+        <h3>TATTOO ORIENTAL</h3>
+        <p>VER MAIS</p>
+      </div>
+    </div>
+
+    <div class="gallery-card" data-category="tradicional">
+      <img src="src/imagens/old.png" alt="Tattoo Tradicional">
+      <div class="gallery-overlay">
+        <span>TRADICIONAL</span>
+        <h3>TATTOO TRADICIONAL</h3>
+        <p>VER MAIS</p>
+      </div>
+    </div>
+
+    <div class="gallery-card" data-category="geometrico">
+      <img src="src/imagens/geometria.png" alt="Tattoo Geométrica">
+      <div class="gallery-overlay">
+        <span>GEOMÉTRICO</span>
+        <h3>TATTOO GEOMÉTRICA</h3>
+        <p>VER MAIS</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<body>
+  <header id="header">
+    <nav class="nav-container">
+      <div class="nav-logo">
+        <h1 class="logo-glow" data-text="RAMOS TATTO">
+          <span>RAMOS TATTO</span>
+        </h1>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#inicio">Início</a>
+          <a href="#estilos">Estilos</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#artista">Sobre</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <span class="hero-subtitle">ARTE NA PELE</span>
+
+      <h2 class="hero-title">
+        <span class="hero-title-main">RAMOS</span><br />
+        <span class="hero-title-sub">TATTOO</span>
+      </h2>
+
+      <p class="hero-description">
+        Cada ideia é tratada como arte. Criamos tatuagens únicas,
+        pensadas para expressar histórias, sentimentos e personalidade.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">AGENDE SUA SESSÃO</a>
+        <a href="#galeria" class="btn-secondary">Ver Trabalhos</a>
+      </div>
+    </div>
+
+
+    <div class="scroll-icon">
+      <span class="mouse-button"></span>
+      <span class="scroll-button"></span>
+    </div>
+  </section>
+
+  <section class="artista" id="artista">
+
+    <div class="artista-grind">
+
+      <div class="artista-photo">
+        <img src="src/imagens/ramos.png" alt="Ramos, artista de tatuagem">
+      </div>
+
+      <div class="artista-text">
+        <span class="artista-tag">o artista</span>
+        <h2 class="artista-title">MAX RAMOS</h2>
+
+        <p>
+          Com mais de 10 anos de experiência na arte da tatuagem, Ramos é reconhecido por seu trabalho meticuloso e
+          atenção aos detalhes.
+
+          Especializado em realismo e blackwork, cada tatuagem é tratada como uma obra de arte única, criada
+          especialmente para contar a história de cada cliente.
+
+          O estúdio segue os mais rigorosos padrões de higiene e segurança, utilizando apenas materiais descartáveis e
+          equipamentos de primeira linha.
+        </p>
+
+        <div class="artista-divisoria"></div>
+
+        <div class="artista-infos">
+          <div class="artista-info">
+            <h3>10+</h3>
+            <p>Anos de experiência</p>
+          </div>
+
+          <div class="artista-info">
+            <h3>2000+</h3>
+            <p>Tatuagens feitas</p>
+          </div>
+
+          <div class="artista-info">
+            <h3>100%</h3>
+            <p>Satisfação</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay" id="tattooModal">
+      <div class="modal-content">
+
+        <button class="gallery-close">✕</button>
+
+        <div class="modal-image-wrapper">
+          <img class="modal-image" src="" alt="">
+        </div>
+
+        <div class="modal-info">
+          <span class="modal-tag">TATUAGEM</span>
+          <h3 class="modal-title"></h3>
+          <p class="modal-description"></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="studio" id="Ramos-bibi">
+
+    <div class="studio-grind">
+
+      <div class="artista-photo">
+        <img src="src/imagens/studio.png" alt="Ramos, artista de tatuagem">
+      </div>
+
+      <div class="studio-text">
+        <span class="studio-tag">Studio</span>
+        <h2 class="studio-title">Ramos Tattoo</h2>
+
+        <p>
+          Nasceu da poeira e da tinta dos velhos cadernos de desenho, da admiração por mestres que transformaram a
+          pele em tela. Max, ou talvez um mentor lendário, passou anos aprendendo os segredos da agulha e da
+          cor, respeitando as raízes da tatuagem, mas com um olhar sempre adiante. O Ramos Tatto não é apenas um
+          lugar; é um portal onde a sabedoria ancestral encontra a ousadia contemporânea. Aqui, cada traço é uma
+          homenagem ao passado e um grito de liberdade para o futuro. Não somos apenas tatuadores; somos contadores de
+          histórias, guardiões de símbolos e artesãos da eternidade, garantindo que a beleza da arte na pele nunca se
+          perca, mas se reinvente a cada batida de máquina.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="styles" id="estilos">
+      <span class="tag-styles">ESPECIALIDADES</span>
+      <h2 class="title-styles">Nossos Estilos</h2>
+
+      <div class="styles-grid">
+        <div class="styles-card">
+          <div class="icon"></div>
+          <h3>Realismo</h3>
+          <p>Retratos e imagens fotorrealísticas com sombreamento detalhado</p>
+        </div>
+
+        <div class="styles-card">
+          <div class="icon"></div>
+          <h3>Tradicional</h3>
+          <p>Old school americano com linhas fortes e cores vibrantes</p>
+        </div>
+
+        <div class="styles-card">
+          <div class="icon"></div>
+          <h3>Geométrico</h3>
+          <p>Mandalas e padrões de geometria sagrada com precisão</p>
+        </div>
+
+        <div class="styles-card">
+          <div class="icon"></div>
+          <h3>Oriental</h3>
+          <p>Estilo japonês tradicional com carpas, dragões e ondas</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="portifolio" id="galeria">
+      <span class="portifolio-tag">COLEÇÃO PARTICULAR</span>
+      <h2 class="portifolio-title">ARTES FAVORITAS</h2>
+
+      <div class="portifolio-grid">
+
+        <div class="portifolio-item" data-title="Tattoo Oriental"
+          data-description="Arte oriental tradicional com traços fortes e simbologia."
+          data-image="src/imagens/oriental.png">
+          <img src="src/imagens/oriental.png" alt="Tattoo Oriental">
+          <span class="portifolio-texto">VER MAIS</span>
+        </div>
+
+        <div class="portifolio-item" data-title="Tattoo Geométrica"
+          data-description="Padrões geométricos precisos e simétricos." data-image="src/imagens/geometria.png">
+          <img src="src/imagens/geometria.png" alt="Tattoo Geométrica">
+          <span class="portifolio-texto">VER MAIS</span>
+        </div>
+
+        <div class="portifolio-item" data-title="Tattoo Tradicional"
+          data-description="Old school com linhas marcantes e cores intensas." data-image="src/imagens/old.png">
+          <img src="src/imagens/old.png" alt="Tattoo Tradicional">
+          <span class="portifolio-texto">VER MAIS</span>
+        </div>
+
+        <div class="portifolio-item" data-title="Tattoo Realismo"
+          data-description="Arte Realismo tradicional com traços fortes e simbologia."
+          data-image="src/imagens/realismo.png">
+          <img src="src/imagens/realismo.png" alt="Tattoo Oriental">
+          <span class="portifolio-texto">VER MAIS</span>
+        </div>
+      </div>
+
+      <a href="#" class="portifolio-link">VER GALERIA COMPLETA</a>
+    </section>
+
+    <section class="contact-session" id="contato">
+      <div class="contact-header">
+        <span class="contact-tag">FALE CONOSCO</span>
+        <h2 class="contact-title">MARQUE SUA SESSÃO</h2>
+        <p class="contact-subtitle">
+          Entre em contato para agendar sua consulta gratuita. Estamos prontos para transformar sua ideia em arte
+        </p>
+      </div>
+
+      <div class="contact-content-grid">
+        <div class="contact-info-list">
+
+          <div class="contact-card whatsapp">
+            <a href="https://wa.me/5547992885881?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento." target="_blank"
+              class="contact-link-wrapper">
+              <div class="icon">
+                <img src="./src/imagens/whatsapp.png" alt="WhatsApp">
+              </div>
+              <h3>WhatsApp</h3>
+              <p>(47) 99288-5881</p>
+            </a>
+          </div>
+
+
+          <div class="contact-card instagram">
+            <a href="https://www.instagram.com/ramos.tattoo_/" target="_blank" class="contact-link-wrapper">
+              <div class="icon">
+                <img src="./src/imagens/instagram.png" alt="Instagram">
+              </div>
+              <h3>Instagram</h3>
+              <p>@ramos.tattoo_</p>
+            </a>
+          </div>
+
+          <div class="contact-card location">
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+dos+boqueteiros+123+Centro+Blumenau+SC"
+              target="_blank" class="contact-link-wrapper">
+              <div class="icon">
+                <img src="./src/imagens/local.png" alt="Localização">
+              </div>
+              <h3>Localização</h3>
+              <p>Rua dos boqueteiros, 123 - Centro</p>
+              <p>Blumenau - SC</p>
+            </a>
+          </div>
+
+          <div class="contact-card schedule">
+            <div class="icon"><img src="./src/imagens/relogio.png" alt=""></div>
+            <h3>Horário</h3>
+            <p>Seg - Sáb: 20h às 20h</p>
+            <p class="small-text">Apenas com agendamento</p>
+          </div>
+
+        </div>
+
+        <div class="contact-cta">
+          <h3 class="cta-title">PRONTO PARA SUA NOVA TATTOO?</h3>
+          <p class="cta-text">
+            Envie suas ideias pelo WhatsApp e receba um orçamento sem compromisso. Cada projeto é único e personalizado
+            para você.
+          </p>
+          <a href="https://wa.me/5547992885881" id="open-whatsapp-popup" class="btn-primary cta-button">
+            CHAMAR NO WHATSAPP
+          </a>
+        </div>
+
+        <div class="wa-popup-overlay" id="waPopup">
+          <div class="wa-popup-card">
+            <button class="wa-popup-close" id="closeWaPopup">✕</button>
+
+            <div class="wa-icon-container">
+              <img src="./src/imagens/whatsapp.png" alt="WhatsApp Icon">
+            </div>
+
+            <h3>Iniciar Orçamento</h3>
+            <p>Preencha os detalhes abaixo para agilizar seu atendimento:</p>
+
+            <div class="formulario">
+              <input type="text" id="nome" placeholder="Seu nome" required>
+              <input type="text" id="tattoo" placeholder="O que deseja tatuar? (Ex: Leão)">
+              <input type="text" id="local" placeholder="Local do corpo">
+              <input type="date" id="data" placeholder="Data desejada">
+              <textarea id="mensagem" placeholder="Conte mais detalhes da sua ideia..."></textarea>
+
+              <button type="button" id="btnEnviarWhats" class="btn-primary cta-button" style="width: 100%;">
+                ENVIAR PARA O WHATSAPP
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por: <span> 3.0Reboot </span></p>
+  </footer>
+
+
+  <div id="app"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
